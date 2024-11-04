@@ -1,9 +1,7 @@
-from sqlalchemy.orm import declarative_base
-from sqlalchemy import create_engine, Column, Integer, String, Sequence, inspect
 from sqlalchemy import create_engine, Column, Integer, String, Sequence, inspect
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-# Replace the placeholders with your actual database credentials
+#define the database connection
 DATABASE_URL = "postgresql://postgres:buddy2701@localhost:5432/DBdemo"
 
 # Create an engine instance
@@ -14,7 +12,7 @@ Base = declarative_base()
 
 # Define the User class
 class User(Base):
-    __tablename__ = 'users'
+    __tablename__ = 'UserDemo.user'
     id = Column(Integer, Sequence('user_id_seq'), primary_key=True)
     name = Column(String(50))
     age = Column(Integer)
